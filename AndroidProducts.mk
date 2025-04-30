@@ -17,7 +17,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/twrp_RMX1941.mk
+	$(LOCAL_DIR)/twrp_CPH1909.mk
 
 COMMON_LUNCH_CHOICES := \
-        twrp_RMX1941-eng
+        twrp_CPH1909-eng

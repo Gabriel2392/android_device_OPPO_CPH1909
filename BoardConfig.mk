@@ -45,6 +45,9 @@ TARGET_CPU_ABI_LIST_32_BIT := armeabi-v7a,armeabi
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+
 # Build
 BUILD_BROKEN_DUP_RULES := true
 
@@ -67,13 +70,16 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_IS_64_BIT := true
 
 # Crypto
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO_FBE := false
 
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
 MTK_HARDWARE := true
+
+# Fastbootd
+TW_INCLUDE_FASTBOOTD := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
@@ -103,19 +109,6 @@ BOARD_USE_FRAMEBUFFER_ALPHA_CHANNEL := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_DISABLE_TRIPLE_BUFFERING := false
 RECOVERY_SDCARD_ON_DATA := true
-
-# Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    ashmemd_aidl_interface-cpp \
-    libashmemd_client \
-	libpuresoftkeymasterdevice \
-	libkeymaster3device
-
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so \
-	$(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-	$(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster3device.so
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi

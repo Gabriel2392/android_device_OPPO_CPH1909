@@ -21,6 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, device/oppo/CPH1909/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := CPH1909
